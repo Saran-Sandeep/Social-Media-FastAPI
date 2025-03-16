@@ -21,6 +21,12 @@ engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+
+# `Base` is the base class for all our ORM models.
+# It is created using `declarative_base()` and
+# serves as the foundation for defining database tables.
+# By inheriting from `Base`, our models gain ORM capabilities,
+# allowing us to define table structures with columns and relationships.
 Base = declarative_base()
 
 
