@@ -43,3 +43,6 @@ htmlcov/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+# temp txt files
+notebook.txt
