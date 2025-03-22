@@ -14,8 +14,7 @@ class User(InputUser):
     created_at: datetime
     modified_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class UserOut(BaseModel):
@@ -24,8 +23,7 @@ class UserOut(BaseModel):
     created_at: datetime
     modified_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class UserLogin(BaseModel):
@@ -55,5 +53,13 @@ class Post(InputPost):
     user_id: int
     user: UserOut
 
-    class Config:
-        from_attributes = True
+
+class PostOut(Post):
+    likes: int
+
+    model_config = {"from_attributes": True}
+
+
+class Vote(BaseModel):
+    post_id: int
+    vote_dir: bool
